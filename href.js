@@ -25,8 +25,6 @@ function href (cb, root) {
       return node
     })(e.target)
 
-    console.log('node', node)
-
     if (!node) return
 
     var isRoutingDisabled = node.hasAttribute(noRoutingAttrName)
