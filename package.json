@@ -7,7 +7,10 @@
     "test": "standard && NODE_ENV=test tape test/*",
     "test:cov": "standard && NODE_ENV=test istanbul cover test/*"
   },
-  "repository": "https://github.com/lorengreenfield/shifty-router",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lorengreenfield/shifty-router.git"
+  },
   "keywords": [
     "client",
     "router",
