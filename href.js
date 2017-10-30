@@ -21,9 +21,11 @@ function href (cb, root) {
       if (!node || node === root) return
       if (node.localName !== 'a') return traverse(node.parentNode)
       if (node.href === undefined) return traverse(node.parentNode)
-      if (window.location.host !== node.host) return traverse(node.parentNode)
+      if (!sameOrigin(node.href)) return
       return node
     })(e.target)
+
+    console.log('node', node)
 
     if (!node) return
 
@@ -38,4 +40,11 @@ function href (cb, root) {
       hash: node.hash
     })
   }
+}
+
+function sameOrigin (href) {
+  var location = window.location
+  var origin = location.protocol + '//' + location.hostname
+  if (location.port) origin += ':' + location.port
+  return (href && (href.indexOf(origin) === 0))
 }
