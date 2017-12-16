@@ -1,8 +1,12 @@
 {
   "name": "shifty-router",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Fast, modular client router, based on sheet-router",
   "main": "index.js",
+  "@std/esm": {
+    "cjs": true,
+    "esm": "js"
+  },
   "scripts": {
     "test": "standard && NODE_ENV=test tape test/*",
     "test:cov": "standard && NODE_ENV=test istanbul cover test/*"
